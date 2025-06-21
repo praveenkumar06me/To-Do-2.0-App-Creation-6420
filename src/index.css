@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Ensure HelpHub has higher z-index than other components */
+.quest-help-hub {
+  z-index: 9999 !important;
+}
+
+/* Override any conflicting z-index values */
+.quest-help-hub * {
+  z-index: inherit !important;
+}
+
+/* Quest Login styling - Custom form integration */
+.quest-login-container {
+  background: transparent;
+}
+
+.quest-login-container * {
+  font-family: inherit !important;
+}
+
+/* Quest components styling */
+.quest-get-started,
+.quest-feedback-workflow,
+.quest-help-hub {
+  font-family: inherit !important;
+}
+
+/* Feedback button specific styles */
+.feedback-button-tooltip {
+  transform: translateX(-100%) translateY(-50%);
+}
+
+/* Smooth animations for feedback modal */
+.feedback-modal-enter {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.feedback-modal-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.feedback-modal-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.feedback-modal-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Remove unwanted background effects from feedback component */
+.quest-feedback-workflow {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: transparent !important;
+}
+
+.quest-feedback-workflow * {
+  background: transparent !important;
+}
+
+/* Ensure the main content areas have proper backgrounds */
+.quest-feedback-workflow .feedback-content,
+.quest-feedback-workflow .feedback-form {
+  background: white !important;
+  border-radius: 0.5rem;
+}
+
+/* Custom scrollbar for feedback modal */
+.quest-feedback-workflow::-webkit-scrollbar {
+  width: 6px;
+}
+
+.quest-feedback-workflow::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.quest-feedback-workflow::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.quest-feedback-workflow::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
